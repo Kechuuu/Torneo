@@ -1,13 +1,37 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
 ---
-!DOCTYPE <html>
-<html>
-  <head>
-	<title>Home</title>
-  </head>
-  <body>
-	<h1>bienvenido al torneo</h1>
-  </body>
-</html>
+
+<Layout title="Liga 3ra fuerza" description="Torneo competitivo">
+  
+  <main class="flex flex-col items-center py-0 min-h-screen w-full">
+    <div class="py-20">
+      <h1 class="text-white text-4xl md:text-6xl font-bold">Liga 3ra fuerza</h1>
+      <p class="flex flex-col items-center text-white mt-4 text-4xl md:text-4xl ">Torneo ráfaga</p>
+    </div>
+    <div class="flex flex-col items-center">
+      <div class="flex">
+        <div class="relative w-15 h-15 overflow-hidden mr-4">
+          <img 
+            class="rounded-full w-full h-auto transform transition duration-500 hover:scale-90 hover:shadow-lg " 
+            src="images/yoz.png"  
+            alt="Foto perfil"
+          />
+        </div>
+        <div class="relative w-15 h-15 overflow-hidden">
+          <img 
+            class="rounded-full w-full h-auto transform transition duration-500 hover:scale-90 hover:shadow-lg " 
+            src="images/laijaz.png"  
+            alt="Foto perfil"
+          />
+        </div>
+      </div>
+    </div>
+    
+    </div>
+    
+      </div>
+    </div>
+  </main>
+</Layout>
