@@ -1,0 +1,15 @@
+---
+const { name, points, assists, rebounds, steals, blocks } = Astro.props;
+---
+
+<div class="player-card bg-gray-800 p-4 rounded-lg shadow-lg text-white my-4">
+  <h2 class="text-2xl md:text-3xl font-bold mb-2">{name}</h2>
+  <h3 class="text-xl md:text-2xl text-left mb-4">Temporada regular</h3>
+  <ul class="stats-container bg-red-900 p-4 rounded-lg flex flex-col justify-center hover:shadow-lg">
+    <li class="mb-2"><strong>Puntos:</strong> {points}</li>
+    <li class="mb-2"><strong>Asistencias:</strong> {assists}</li>
+    <li class="mb-2"><strong>Rebotes:</strong> {rebounds}</li>
+    <li class="mb-2"><strong>Robos:</strong> {steals}</li>
+    <li><strong>Bloqueos:</strong> {blocks}</li>
+  </ul>
+</div>

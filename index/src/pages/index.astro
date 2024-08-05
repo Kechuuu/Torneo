@@ -1,36 +1,260 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Footer from "../components/Footer.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import Table from "../components/Table.astro";
+
+const playerStats_luis = {
+  name: "Luis Rey",
+  stats: {
+    points: 24,
+    assists: 7,
+    rebounds: 12,
+    steals: 3,
+    blocks: 2,
+  },
+};
+const playerStats_jaden = {
+  name: "Jaden Cobarrubias",
+  stats: {
+    points: 24,
+    assists: 7,
+    rebounds: 12,
+    steals: 3,
+    blocks: 2,
+  },
+};
 ---
 
-<Layout title="Liga 3ra fuerza" description="Torneo competitivo">
+<style>
+  .background-animated-dark {
+    background: linear-gradient(-45deg,#070707, #0f0f0f, #070707, #0f0f0f);
+    background-size: 400% 400%;
+    -webkit-animation: gradient 15s ease infinite;
+    animation: gradient 15s ease infinite;
+  }
   
+  .background-animated {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    -webkit-animation: gradient 15s ease infinite;
+    animation: gradient 15s ease infinite;
+  }
+  
+  @-webkit-keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .drop-shadow {
+    filter: drop-shadow(2px 4px 6px rgb(172, 7, 7));
+  }
+  .drop-shadow_ {
+    filter: drop-shadow(2px 4px 6px rgb(24, 24, 24));
+  }
+
+  .mask-gradient {
+    mask-image: linear-gradient(black 80%, transparent 100%);
+    -webkit-mask-image: linear-gradient(black 80%, transparent 90%);
+  }
+  .transparent-background {
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo negro con 50% de opacidad */
+}
+  .stats-container {
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid #fff;
+    background-color: #070707;
+  }
+  .stats-container ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  .stats-container li {
+    margin-bottom: 8px;
+  }
+  .radar-chart {
+    width: 300px;
+    height: 300px;
+    margin: auto;
+  }
+</style>
+
+<Layout title="Liga 3ra fuerza" description="Torneo competitivo">
   <main class="flex flex-col items-center py-0 min-h-screen w-full">
     <div class="py-20">
       <h1 class="text-white text-4xl md:text-6xl font-bold">Liga 3ra fuerza</h1>
-      <p class="flex flex-col items-center text-white mt-4 text-4xl md:text-4xl ">Torneo ráfaga</p>
+      <p
+        class="flex flex-col items-center text-white mt-4 text-4xl md:text-4xl"
+      >
+        BIG DICKS
+      </p>
     </div>
+    <SectionContainer id="jugadores">
+    </SectionContainer>
     <div class="flex flex-col items-center">
       <div class="flex">
         <div class="relative w-15 h-15 overflow-hidden mr-4">
-          <img 
-            class="rounded-full w-full h-auto transform transition duration-500 hover:scale-90 hover:shadow-lg " 
-            src="images/yoz.png"  
+          <img
+            class="h-auto transform transition duration-500 hover:scale-90 hover:shadow-lg drop-shadow mask-gradient"
+            src="/images/yoz.png"
             alt="Foto perfil"
           />
         </div>
         <div class="relative w-15 h-15 overflow-hidden">
-          <img 
-            class="rounded-full w-full h-auto transform transition duration-500 hover:scale-90 hover:shadow-lg " 
-            src="images/laijaz.png"  
+          <img
+            class="h-auto transform transition duration-500 hover:scale-90 hover:shadow-lg drop-shadow mask-gradient"
+            src="/images/laijaz.png"
             alt="Foto perfil"
           />
         </div>
+        <div class="relative w-15 h-15 overflow-hidden">
+          <img
+            class="h-auto transform transition duration-500 hover:scale-90 hover:shadow-lg drop-shadow mask-gradient"
+            src="/images/pelos.png"
+            alt="Foto perfil"
+          />
+        </div>
+        <div class="relative w-15 h-15 overflow-hidden">
+          <a href="#cardLuis">
+          <img
+            class="h-auto transform transition duration-500 hover:scale-90 hover:shadow-lg drop-shadow mask-gradient"
+            src="/images/luis.png"
+            alt="Foto perfil"
+          />
+        </a>
+        </div>
+
+        <div class="relative w-15 h-15 overflow-hidden">
+          <a href="#cardJaden">
+          <img
+            class="h-auto transform transition duration-500 hover:scale-90 hover:shadow-lg drop-shadow mask-gradient"
+            src="/images/jaden.png"
+            alt="Foto perfil"
+            
+          />
+        </a>
+        </div>
       </div>
-    </div>
-    
-    </div>
-    
+
+      <SectionContainer id="tabla">
+        <Table class="mb-4" />
+      </SectionContainer>
+
+      <SectionContainer id="destacados">
+        <h1
+          class="flex my-3 text-white text-2xl md:text-4xl font-bold p-1 justify-center " id = "cardJaden"	
+        >
+          Jugadores destacados
+        </h1>
+        <div class="flex flex-col items-center space-y-4">
+          <div
+            class="stats-container  background-animated bg-red-900 p-4 rounded-lg flex flex-col items-center hover:shadow-lg"
+          >
+          <h2
+          class="text-white text-2xl md:text-3xl font-bold flex flex-col items-center"
+        >
+                {playerStats_jaden.name}
+                <img
+                class="w-48 h-auto transform transition duration-500 hover:scale-90 hover:shadow-lg drop-shadow mask-gradient"
+                src="/images/jaden.png"
+                  alt="Foto perfil"
+                />
+              </h2>
+              <div
+              class="flex flex-col text-white background-animated p-4 rounded-lg  my-4 "
+            >
+              <h3
+                class="flex flex-col text-white items-left text-white my-1 text-2xl md:text-2xl"
+              >
+                Temporada regular
+              </h3>
+
+              <li>
+                <strong>Puntos: </strong>
+                {playerStats_jaden.stats.points}
+              </li>
+              <li>
+                <strong>Asistencias: </strong>
+                {playerStats_jaden.stats.assists}
+              </li>
+              <li>
+                <strong>Rebotes: </strong>
+                {playerStats_jaden.stats.rebounds}
+              </li>
+              <li><strong>Robos: </strong> {playerStats_jaden.stats.steals}</li>
+              <li>
+                <strong>Bloqueos: </strong>
+                {playerStats_jaden.stats.blocks}
+              </li>
+            </div>
+          </div>
+        </div>
+        
+
+        <div class="flex flex-col  mt-4 items-center space-y-4" id="cardLuis">
+          <div
+            class="stats-container background-animated-dark bg-red-900 p-4 rounded-lg flex flex-col items-center hover:shadow-lg" 
+          >
+            
+              <h2
+                class="text-white text-2xl md:text-3xl font-bold flex flex-col items-center"
+              >
+                {playerStats_luis.name}
+              </h2>
+              <img
+                class="w-48 h-auto transform transition duration-500 hover:scale-90 hover:shadow-lg drop-shadow_ mask-gradient"
+                src="/images/luis.png"
+                alt="Foto perfil"
+              />
+              <div
+              class=" background-animated-dark bg-red-900 p-4 rounded-lg flex flex-col justify-center "
+            >
+
+              <h3
+                class="flex flex-col text-white items-left text-white my-1 text-2xl md:text-2xl"
+              >
+                Temporada regular
+              </h3>
+              <li><strong>Puntos: </strong> {playerStats_luis.stats.points}</li>
+              <li>
+                <strong>Asistencias: </strong>
+                {playerStats_luis.stats.assists}
+              </li>
+              <li>
+                <strong>Rebotes: </strong>
+                {playerStats_luis.stats.rebounds}
+              </li>
+              <li><strong>Robos: </strong> {playerStats_luis.stats.steals}</li>
+              <li>
+                <strong>Bloqueos: </strong>
+                {playerStats_luis.stats.blocks}
+              </li>
+            </div>
+          </div>
+         
+        </div>
+      </SectionContainer>
+      <div class="radar-chart">
+        <canvas id="radarChart"></canvas>
       </div>
     </div>
   </main>

@@ -1,0 +1,145 @@
+<style>
+  .background-animated {
+    background: linear-gradient(-45deg, #ff0000, #000000, #000000, #ff0000);
+    background-size: 400% 400%;
+    -webkit-animation: gradient 15s ease infinite;
+    animation: gradient 15s ease infinite;
+  }
+  
+  @-webkit-keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: #090909; /* Fondo oscuro para el encabezado */
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  width: 50%; /* Ajusta este valor según sea necesario */
+}
+
+table {
+  table-layout: fixed; /* Hace que las columnas mantengan un ancho fijo */
+}
+
+tbody tr:nth-child(even) {
+  background-color: #0f0f0f; /* Alterna colores de fila para mejor legibilidad */
+}
+
+th {
+  color: #edf2f7; /* Color de texto blanco para los encabezados */
+}
+
+td {
+  color: #e2e8f0; /* Color de texto gris claro para las celdas */
+}
+
+/* Títulos de las secciones */
+h2, h3 {
+  color: #edf2f7;
+  font-family: 'Arial', sans-serif;
+  text-align: left; /* Asegura que el texto de los títulos esté alineado a la izquierda */
+}
+</style>
+
+<main class="flex flex-col  items-center py-5 min-h-screen w-full b-900">
+  <section class="w-full background-animated max-w-4xl p-6 bg-red-800 rounded-lg shadow-lg">
+    <h2 class="text-2xl font-bold text-white mb-4">Big Dicks</h2>
+    
+    <h3 class="text-xl font-semibold mb-2">Juegos Ganados</h3>
+    <table class="w-full text-white border-collapse">
+      <thead>
+        <tr class="">
+          <th class="p-2 text-left">Equipo</th>
+          <th class="p-2 text-left">Fecha</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="p-2">Aragón</td>
+          <td class="p-2">20 de junio</td>
+        </tr>
+        <tr>
+          <td class="p-2">Aurora</td>
+          <td class="p-2">21 de junio</td>
+        </tr>
+        <tr>
+          <td class="p-2">Mat Tamazula</td>
+          <td class="p-2">24 de junio</td>
+        </tr>
+        <tr>
+          <td class="p-2">Jaxxboys</td>
+          <td class="p-2">25 de junio</td>
+        </tr>
+        <tr>
+          <td class="p-2">Tornos Retamoza</td>
+          <td class="p-2">15 de julio</td>
+        </tr>
+        <tr>
+          <td class="p-2">Chiveros</td>
+          <td class="p-2">16 de julio</td>
+        </tr>
+      </tbody>
+    </table>
+    
+
+    <h3 class="text-xl font-semibold mt-8 mb-2">Juegos Perdidos</h3>
+    <table class="w-full text-white border-collapse">
+      <thead>
+        <tr class="">
+          <th class="p-2 text-left">Equipo</th>
+          <th class="p-2 text-left">Fecha</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="p-2">Nova Dental</td>
+          <td class="p-2">2 de julio</td>
+        </tr>
+        <tr>
+          <td class="p-2">Rec Beltrán</td>
+          <td class="p-2">8 de julio</td>
+        </tr>
+        <tr>
+          <td class="p-2">Royal Prestige</td>
+          <td class="p-2">10 de julio</td>
+        </tr>
+        <tr>
+          <td class="p-2">Aurora</td>
+          <td class="p-2">23 de julio</td>
+        </tr>
+        <tr>
+          <td class="p-2">Aragón</td>
+          <td class="p-2">25 de julio</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </section>
+</main>
